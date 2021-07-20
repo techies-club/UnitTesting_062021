@@ -5,9 +5,9 @@ var fs = require("fs"); //require file system object
 
 //for CORS issue
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*');
-    next();
-  });
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 // Endpoint to Get a list of users
 app.get("/getUsers", function (req, res) {
@@ -34,7 +34,8 @@ function getUserEmail(data, email) {
 }
 
 // Create a server to listen at port 8088 for server 127.0.0.1 (optional of localhost)
-var server = app.listen(8088, "127.0.0.1", function () {//make sur ethe port is different than vue app (8080). And 8081 thrown permission error
+var server = app.listen(8088, "127.0.0.1", function () {
+  //make sur ethe port is different than vue app (8080). And 8081 thrown permission error
   console.log(server.address());
   var host = server.address().address;
   var port = server.address().port;

@@ -13,7 +13,7 @@ describe("check menu", () => {
   });
 
   const emalId = "oleander@gmail.com";
-  
+
   //Below test will fail if line #7 (jest.mock("axios");) is commented
   it("returns a mock user from service", async () => {
     axios.get.mockResolvedValue({
@@ -40,11 +40,10 @@ describe("check menu", () => {
   it("Test user service validates user by email: actual service call:", async () => {
     const user = await userServiceModule.validateEmail(emalId); // Run the function
     // console.log(user);
-   if (user) {
+    if (user) {
       expect(user.data.length).toBeGreaterThan(0); // Make an assertion on the result
-   }
+    }
   });
-
 
   /* TODO:
   it("Menu check for registered user", async () => {
